@@ -46,6 +46,15 @@ class GameBoard
     @spaces.none?{|space| space.value === 0}
   end
 
+  def to_s
+    result = ""
+    @spaces.each do |space|
+      result.concat(space.value.to_s)
+    end
+
+    result
+  end
+
   def ==(other)
     @spaces.each_with_index do |space, index|
       other_space = other.spaces[index]

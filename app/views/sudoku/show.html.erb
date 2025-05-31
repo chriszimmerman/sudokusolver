@@ -1,0 +1,10 @@
+<h1>Solution</h1>
+
+<%= form_with url: "/sudoku/create", method: :post do |form| %>
+  <% @solution.split("").map(&:to_i).each_with_index do |number, index| %>
+    <%= number %>
+    <% if (index + 1) % 9 == 0 %>
+      <br>
+    <% end %>
+  <% end %>
+<% end %>
