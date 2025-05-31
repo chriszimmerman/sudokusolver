@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'sudoku/index'
+  post 'sudoku/create'
+  get 'sudoku/show'
   get 'render/index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -8,5 +11,5 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-  root "render#index"
+  root "sudoku#index"
 end
