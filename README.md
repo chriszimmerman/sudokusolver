@@ -4,7 +4,7 @@ This app is deployed on [Render](https://sudokusolver-kte4.onrender.com/)
 
 ## Ruby version
 
-3.0.6
+3.4.2
 
 ## Running the app locally
 
