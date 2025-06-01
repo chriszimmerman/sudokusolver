@@ -1,9 +1,9 @@
 source "https://rubygems.org"
 
-ruby "3.0.6"
+ruby "3.4.2"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem "rails", "~> 7.1.5", ">= 7.1.5.1"
+gem "rails", "~> 8"
 
 gem "rspec-core"
 gem "rspec-rails"
@@ -69,3 +69,9 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem "tailwindcss-ruby", "~> 4.1"
+
+gem "tailwindcss-rails", "~> 4.2"
+
+gem "foreman", "~> 0.88.1"

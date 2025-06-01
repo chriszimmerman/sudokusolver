@@ -5,13 +5,16 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <%= stylesheet_link_tag "tailwind", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
+  <div class="p-4 text-white bg-blue-500 rounded"> Hello Tailwind CSS! </div>
 
   <body>
-    <%= yield %>
+    <main class="mt-28 px-5 flex">
+      <%= yield %>
+    </main>
   </body>
   <footer style="margin-top:20px">
     Code for this application can be found at on <a href="https://github.com/chriszimmerman/sudokusolver">GitHub</a>.
