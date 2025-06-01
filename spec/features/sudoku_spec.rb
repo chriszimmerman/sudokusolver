@@ -30,7 +30,7 @@ RSpec.describe "sudoku" do
         element.set(numbers[index])
       end
 
-      click_on("Submit")
+      click_on("Solve")
 
       expect(page).to have_content("Solution")
       expect(page).to have_content(solution_numbers[0..8].join(" "))

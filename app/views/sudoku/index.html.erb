@@ -1,14 +1,16 @@
-<h1>Sudoku Solver</h1>
 <p>Enter a puzzle to be solved:</p>
+<br>
 
 <%= form_with url: "/sudoku/create", method: :post do |form| %>
-  <% (1..81).each do |number| %>
-    <%= form.number_field :puzzle, in: 0..9, step: 1, value: 0, multiple: true %>
-    <% if number % 9 == 0 %>
-      <br>
+  <div class="mb-8 ml-4">
+    <% (1..81).each do |number| %>
+      <%= form.number_field :puzzle, in: 0..9, step: 1, value: 0, multiple: true %>
+      <% if number % 9 == 0 %>
+        <br>
+      <% end %>
     <% end %>
-  <% end %>
-  <%= form.submit "Submit" %>
+  </div>
+  <%= form.button "Solve", action: "create", class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %>
 <% end %>
 
 

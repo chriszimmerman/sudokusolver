@@ -9,14 +9,14 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
-  <div class="p-4 text-white bg-blue-500 rounded"> Hello Tailwind CSS! </div>
+  <div class="p-4 text-white bg-blue-500"> Sudoku Solver</div>
 
   <body>
-    <main class="mt-28 px-5 flex">
+    <main>
       <%= yield %>
     </main>
   </body>
   <footer style="margin-top:20px">
-    Code for this application can be found at on <a href="https://github.com/chriszimmerman/sudokusolver">GitHub</a>.
+    Code for this application can be found at on <a class="font-medium text-blue-600 dark:text-blue-500 hover:underline" href="https://github.com/chriszimmerman/sudokusolver">GitHub</a>.
   </footer>
 </html>
