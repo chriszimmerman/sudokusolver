@@ -1,24 +1,17 @@
-# README
+# Sudoku Solver
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app is deployed on [Render](https://sudokusolver-kte4.onrender.com/)
 
-Things you may want to cover:
+## Ruby version
 
-* Ruby version
+3.0.6
 
-* System dependencies
+## Running the app locally
 
-* Configuration
+1. Run `bin/setup`
+2. Run `rails s`
 
-* Database creation
+## Running Tests
 
-* Database initialization
+1. Run `bundle exec rspec`
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
