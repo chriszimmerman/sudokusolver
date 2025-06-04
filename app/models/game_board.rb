@@ -46,6 +46,27 @@ class GameBoard
     @spaces.none?{|space| space.value === 0}
   end
 
+  def valid?
+    (1..9).each do |number|
+      row_spaces = @spaces.select{|space| space.row === number && space.value != 0}
+      if row_spaces.map(&:value).length != row_spaces.map(&:value).uniq.length then
+        return false
+      end
+
+      column_spaces = @spaces.select{|space| space.column === number && space.value != 0}
+      if column_spaces.map(&:value).length != column_spaces.map(&:value).uniq.length then
+        return false
+      end
+
+      subsquare_spaces = @spaces.select{|space| space.subsquare === number && space.value != 0}
+      if subsquare_spaces.map(&:value).length != subsquare_spaces.map(&:value).uniq.length then
+        return false
+      end
+    end
+
+    return true
+  end
+
   def to_s
     result = ""
     @spaces.each do |space|

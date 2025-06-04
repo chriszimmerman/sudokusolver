@@ -1,6 +1,18 @@
 <div class="mx-auto text-center items-center gap-x-4 rounded-xl bg-white p-6">
+  <% if @error %>
+    <div role="alert" class="mb-8">
+      <div class="bg-red-500 text-white font-bold rounded-t px-4 py-2">
+        <%= @error %>
+      </div>
+      <div class="border border-t-0 border-red-400 rounded-b bg-red-100 px-4 py-3 text-red-700">
+        <p>Please verify that your puzzle does not have the same numbers selected for a row, column, or subgrid.</p>
+      </div>
+    </div>
+  <% end %>
+
   <h1 class="text-4xl mb-4">Enter a puzzle to be solved</h1>
   <p>A zero (0) represents an empty space</p>
+
   <br>
   <%= form_with url: "/sudoku/create", method: :post do |form| %>
     <table class="outline-3 mb-4" style="margin-left: auto; margin-right: auto;">

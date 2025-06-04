@@ -43,5 +43,29 @@ RSpec.describe "sudoku" do
       expect(page).to have_content(solution_numbers[63..71].join(" "))
       expect(page).to have_content(solution_numbers[72..80].join(" "))
     end
+
+    scenario "solve an invalid puzzle" do
+      numbers = [1, 1, 8, 3, 4, 2, 9, 0, 0,
+                 0, 0, 9, 0, 0, 0, 7, 0, 0,
+                 4, 0, 0, 0, 0, 0, 0, 0, 3,
+                 0, 0, 6, 4, 7, 3, 2, 0, 0,
+                 0, 3, 0, 0, 0, 0, 0, 1, 0,
+                 0, 0, 2, 8, 5, 1, 6, 0, 0,
+                 7, 0, 0, 0, 0, 0, 0, 0, 8,
+                 0, 0, 4, 0, 0, 0, 1, 0, 0,
+                 0, 0, 3, 6, 9, 7, 5, 0, 0]
+
+      visit "/"
+      expect(page).to have_content("Sudoku Solver")
+
+      all('#puzzle').each_with_index do |element, index|
+        element.set(numbers[index])
+      end
+
+      click_on("Solve")
+
+      expect(page).to have_content("Invalid puzzle")
+      expect(page).to have_content("Please verify that your puzzle does not have the same numbers selected for a row, column, or subgrid.")
+    end
   end
 end
