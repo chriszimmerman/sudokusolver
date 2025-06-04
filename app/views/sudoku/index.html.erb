@@ -1,16 +1,18 @@
 <div class="mx-auto text-center items-center gap-x-4 rounded-xl bg-white p-6">
-  <p>Enter a puzzle to be solved:</p>
+  <h1 class="text-4xl mb-4">Enter a puzzle to be solved</h1>
+  <p>A zero (0) represents an empty space</p>
   <br>
-
   <%= form_with url: "/sudoku/create", method: :post do |form| %>
-    <div class="mb-8 ml-4">
-      <% (1..81).each do |number| %>
-        <%= form.number_field :puzzle, in: 0..9, step: 1, value: 0, multiple: true %>
-        <% if number % 9 == 0 %>
-          <br>
+    <table class="outline-3 mb-4" style="margin-left: auto; margin-right: auto;">
+      <tr>
+        <% (1..81).each_with_index do |_, index| %>
+          <td class="<%= solution_classes(index) %>"><%= form.number_field :puzzle, in: 0..9, step: 1, value: 0, multiple: true, size: 1 %></td>
+          <% if (index + 1) % 9 == 0 %>
+            </tr>
+            <tr>
+          <% end %>
         <% end %>
-      <% end %>
-    </div>
+        </table>
     <%= form.button "Solve", action: "create", class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %>
   <% end %>
 </div>
